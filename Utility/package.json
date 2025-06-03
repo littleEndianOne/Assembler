@@ -1,0 +1,19 @@
+{
+    "name": "errormsggenerator",
+    "version": "1.0.0",
+    "description": "Generates error messages from error enum values. ",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "David B",
+    "license": "None",
+    "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/mocha": "^5.2.5",
+        "antlr4ts": "^0.4.1-alpha.0",
+        "chai": "^4.2.0",
+        "mocha": "^5.2.0",
+        "typescript": "^3.1.6"
+    }
+}

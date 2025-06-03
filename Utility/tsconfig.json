@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "removeComments": true,
+        "preserveConstEnums": false,
+        "sourceMap": true,    
+        "experimentalDecorators": true,
+        "noImplicitAny": true,
+       },    
+    "include": [
+        "index.ts",
+        "ErrorLog/**/*",
+        "ErrorMsgGenerator/**/*",
+        "test/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
