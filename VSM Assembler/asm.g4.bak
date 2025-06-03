@@ -1,0 +1,103 @@
+grammar asm;
+
+prog: (line EOL)+ EOF;
+
+line: label? (instruction)? comment?;
+
+instruction: opcode | opcodeparam;
+opcodeparam:
+	'CONSTF' (INT|FLOAT)			# CONSTF
+	| 'CONSTF8' INT					# CONSTF8
+	| 'CONSTF16' INT				# CONSTF16
+	| 'CONSTI' INT					# CONSTI
+	| 'CONSTI8' INT					# CONSTI8
+	| 'CONSTI16' INT				# CONSTI16
+	| 'CONSTI16' INT				# CONSTI16
+	| 'JMP' NAME					# JMP
+	| 'JMPT' NAME					# JMPT
+	| 'JMPF' NAME					# JMPF
+	| 'CALL' NAME ',' INT ',' INT	# CALL
+	| 'LDARG' INT					# LDARG
+	| 'DSTR' INT ',' INT			# DSTR
+	| 'STORE' INT					# STORE
+	| 'LOAD' INT					# LOAD
+	| 'APPND' INT?					# APPND
+	| 'TOSTR' INT?					# TOSTR
+	| 'GDSTR' INT ',' INT			# GDSTR
+	| 'GSTORE' INT					# GSTORE
+	| 'GLOAD' INT					# GLOAD
+	| 'DARRAY' INT ',' INT			# DARRAY
+	| 'STOREAE' INT ',' INT			# STOREAE
+	| 'LOADAE' INT ',' INT			# LOADAE
+	| 'GDARRAY' INT ',' INT			# GDARRAY
+	| 'GSTOREAE' INT ',' INT		# GSTOREAE
+	| 'GLOADAE' INT ',' INT			# GLOADAE
+	| 'IINC' INT ',' INT			# IINC;
+
+opcode:
+	'CONSTFN0'
+	| 'CONSTFN1'
+	| 'CONSTFN2'
+	| 'CONSTFN3'
+	| 'CONSTFN4'
+	| 'CONSTFN5'
+	| 'CONSTFN6'
+	| 'CONSTFN7'
+	| 'CONSTFN8'
+	| 'CONSTFN9'
+	| 'CONSTFN10'
+	| 'CONSTIN0' //int 0
+	| 'ADDF'
+	| 'SUBF'
+	| 'DIVF'
+	| 'MULF'
+	| 'EQF'
+	| 'LTF'
+	| 'GTF'
+	| 'NEQF'
+	| 'ADDI'
+	| 'SUBI'
+	| 'DIVI'
+	| 'MULI'
+	| 'EQI'
+	| 'LTI'
+	| 'GTI'
+	| 'NEQI'
+	| 'RET'
+	| 'POP'
+	| 'PROMOTE'
+	| 'DEMOTE'
+	| 'HALT';
+
+label: name ':';
+
+argumentlist: argument (',' argument)*;
+
+argument: number | dollar | name | string;
+
+dollar: '$';
+
+string: STRING;
+
+name: NAME;
+
+number: INT | FLOAT;
+
+comment: COMMENT;
+
+NAME: [a-zA-Z] [a-zA-Z0-9."]*;
+
+STRING: '"' ( ~('\\' | '"'))* '"';
+
+INT: ('-')? Digit+;
+
+FLOAT: ('-')? Digit+ '.' Digit* | '.' Digit+;
+
+fragment Digit: [0-9];
+
+COMMENT: ';' ~ [\r\n]* -> skip;
+
+EOL: [\r?\n]+;
+
+WS: [ \t] -> skip;
+

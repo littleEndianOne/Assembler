@@ -1,0 +1,1 @@
+cp $pwd\\parser\\*.interp $pwd\\.antl\\

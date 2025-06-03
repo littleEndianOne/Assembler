@@ -1,0 +1,11 @@
+T__0=1
+T__1=2
+NAME=3
+STRING=4
+INT=5
+FLOAT=6
+COMMENT=7
+EOL=8
+WS=9
+':'=1
+','=2

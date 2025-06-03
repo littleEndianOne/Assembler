@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "removeComments": true,
+        "preserveConstEnums": false,
+        "sourceMap": true,    
+        "experimentalDecorators": true,
+        "noImplicitAny": true,
+       },    
+    "include": [
+        "vsmAssembler/**/*",
+        "tests/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

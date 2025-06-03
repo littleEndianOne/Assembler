@@ -1,0 +1,25 @@
+{
+    "name": "vsm_assembler",
+    "version": "1.0.0",
+    "description": "",
+    "main": "asmMachineCodeGen.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/mocha": "^5.2.5",
+        "antlr4ts": "^0.4.1-alpha.0",
+        "chai": "^4.2.0",
+        "mocha": "^5.2.0",
+        "typescript": "^3.1.6"
+    },
+    "dependencies": {
+        "@types/filesaver": "0.0.30",
+        "@types/node": "^10.12.9",
+        "file-saver": "^2.0.0",
+        "fs": "0.0.1-security"
+    }
+}
