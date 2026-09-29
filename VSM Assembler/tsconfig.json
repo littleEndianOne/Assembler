@@ -4,16 +4,17 @@
         "module": "commonjs",
         "removeComments": true,
         "preserveConstEnums": false,
-        "sourceMap": true,    
+        "sourceMap": true,
         "experimentalDecorators": true,
-        "noImplicitAny": true,
-       },    
+        "noImplicitAny": true
+    },
     "include": [
         "vsmAssembler/**/*",
         "tests/**/*"
     ],
     "exclude": [
         "node_modules",
-        "**/*.spec.ts"
+        "**/*.spec.ts",
+        "tests/sandbox.ts"
     ]
 }
